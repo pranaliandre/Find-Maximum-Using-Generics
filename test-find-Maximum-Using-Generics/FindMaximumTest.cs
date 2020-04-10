@@ -11,10 +11,7 @@ namespace test_find_Maximum_Using_Generics
         /// <summary>
         /// Method to find maximum of three integer number
         /// </summary>
-        /// <param name="number1">number1</param>
-        /// <param name="number2"> number2</param>
-        /// <param name="number3"> number3</param>
-        /// /// <return> maximum number </return>
+       
         [Test]
         public void GivenThreeInteger_ShouldReturnMaximumNumber()
         {
@@ -26,6 +23,19 @@ namespace test_find_Maximum_Using_Generics
             int maximum = findMaximum.IntegerMaximum(number1, number2, number3); //find maximum number
             Assert.AreEqual(expected, maximum);
         }
-
+        /// <summary>
+        /// Method to find maximum of three float number
+        /// </summary>
+        [Test]
+        public void GivenThreeFloat_ShouldReturnMaximumNumber()
+        {
+            float expected = 10.4F;
+            float number1 = 2.5F;
+            float number2 = 10.4F;
+            float number3 = 6.6F;
+            FindMaximumProblem findMaximum = new FindMaximumProblem();
+            float maximum = findMaximum.FloatMaximum(number1, number2, number3); //find maximum number
+            Assert.AreEqual(expected, maximum);
+        }
     }
 }

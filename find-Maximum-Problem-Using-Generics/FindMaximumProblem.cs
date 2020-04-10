@@ -1,5 +1,4 @@
 ﻿using System;
-
 namespace find_Maximum_Problem_Using_Generics
 {
     public class FindMaximumProblem
@@ -14,6 +13,26 @@ namespace find_Maximum_Problem_Using_Generics
         public int IntegerMaximum(int number1, int number2, int number3)
         {
             int maximumNo = number1;
+            if (number2.CompareTo(maximumNo) > 0)
+            {
+                maximumNo = number2;
+            }
+            if (number3.CompareTo(maximumNo) > 0)
+            {
+                maximumNo = number3;
+            }
+            return maximumNo;
+        }
+        /// <summary>
+        /// Method to find maximum number to given three float number
+        /// </summary>
+        /// <param name="number1">First float number</param>
+        /// <param name="number2">Second float number</param>
+        /// <param name="number3">Third float number</param>
+        /// <returns>Maximum number</returns>
+        public float FloatMaximum(float number1, float number2, float number3)
+        {
+            float maximumNo = number1;
             if (number2.CompareTo(maximumNo) > 0)
             {
                 maximumNo = number2;
