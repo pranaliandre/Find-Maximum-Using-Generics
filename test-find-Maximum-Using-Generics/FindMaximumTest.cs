@@ -37,5 +37,19 @@ namespace test_find_Maximum_Using_Generics
             float maximum = findMaximum.FloatMaximum(number1, number2, number3); //find maximum number
             Assert.AreEqual(expected, maximum);
         }
+        [Test]
+        /// <summary>
+        /// Method to find maximum of three string name 
+        /// </summary>
+        public void GivenThreeString_ShouldReturnMaximum()
+        {
+            string expected ="sanjivani";
+            string name1 = "aryan";
+            string name2 = "sanjivani";
+            string name3 = "kimaya";
+            FindMaximumProblem findMaximum = new FindMaximumProblem();
+            string maximum = findMaximum.StringMaximum(name1, name2, name3); //find maximum name
+            Assert.AreEqual(expected, maximum);
+        }
     }
 }

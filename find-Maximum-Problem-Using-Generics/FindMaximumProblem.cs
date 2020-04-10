@@ -44,6 +44,26 @@ namespace find_Maximum_Problem_Using_Generics
             return maximumNo;
         }
         /// <summary>
+        /// Method
+        /// </summary>
+        /// <param name="name1"></param>
+        /// <param name="name2"></param>
+        /// <param name="name3"></param>
+        /// <returns>maximum string name</returns>
+        public string StringMaximum(string name1, string name2, string name3)
+        {
+            string maximumName = name1;
+            if (name2.CompareTo(maximumName) > 0)
+            {
+                maximumName = name2;
+            }
+            if (name3.CompareTo(maximumName) > 0)
+            {
+                maximumName = name3;
+            }
+            return maximumName;
+        }
+        /// <summary>
         /// Main method
         /// </summary>
         /// <param name="args"></param>
