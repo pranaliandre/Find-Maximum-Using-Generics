@@ -19,8 +19,8 @@ namespace test_find_Maximum_Using_Generics
             int number1 = 2;
             int number2 = 10;
             int number3 = 6;
-            FindMaximumProblem findMaximum = new FindMaximumProblem();
-            int maximum = findMaximum.IntegerMaximum(number1, number2, number3); //find maximum number
+            FindMaximumProblem<int> findMaximum = new FindMaximumProblem<int>();
+            int maximum = findMaximum.Maximum(number1, number2, number3); //find maximum number
             Assert.AreEqual(expected, maximum);
         }
         /// <summary>
@@ -33,8 +33,8 @@ namespace test_find_Maximum_Using_Generics
             float number1 = 2.5F;
             float number2 = 10.4F;
             float number3 = 6.6F;
-            FindMaximumProblem findMaximum = new FindMaximumProblem();
-            float maximum = findMaximum.FloatMaximum(number1, number2, number3); //find maximum number
+            FindMaximumProblem<float> findMaximum = new FindMaximumProblem<float>();
+            float maximum = findMaximum.Maximum(number1, number2, number3); //find maximum number
             Assert.AreEqual(expected, maximum);
         }
         [Test]
@@ -47,8 +47,8 @@ namespace test_find_Maximum_Using_Generics
             string name1 = "aryan";
             string name2 = "sanjivani";
             string name3 = "kimaya";
-            FindMaximumProblem findMaximum = new FindMaximumProblem();
-            string maximum = findMaximum.StringMaximum(name1, name2, name3); //find maximum name
+            FindMaximumProblem<string> findMaximum = new FindMaximumProblem<string>();
+            string maximum = findMaximum.Maximum(name1, name2, name3); //find maximum name
             Assert.AreEqual(expected, maximum);
         }
     }
