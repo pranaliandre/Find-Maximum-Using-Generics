@@ -3,9 +3,18 @@ namespace find_Maximum_Problem_Using_Generics
 {
     public class FindMaximumProblem<T> where T : IComparable
     {
+        /// <summary>
+        /// variable
+        /// </summary>
         readonly T number1;
         readonly T number2;
         readonly T number3;
+        /// <summary>
+        /// parameterized constructor
+        /// </summary>
+        /// <param name="number1">first input</param>
+        /// <param name="number2">first input</param>
+        /// <param name="number3">first input</param>
         public FindMaximumProblem(T number1,T number2,T number3)
         {
             this.number1 = number1;
@@ -15,9 +24,9 @@ namespace find_Maximum_Problem_Using_Generics
         /// <summary>
         /// Method to find maximum number to given three integer number
         /// </summary>
-        /// <param name="number1">First integer number</param>
-        /// <param name="number2">Second integer number</param>
-        /// <param name="number3">Third integer number</param>
+        /// <param name="number1">First input</param>
+        /// <param name="number2">Second input</param>
+        /// <param name="number3">Third input</param>
         /// <returns>maximum number</returns>
         public T Maximum()
         {
@@ -31,6 +40,10 @@ namespace find_Maximum_Problem_Using_Generics
                 maximumNo = number3;
             }
             return maximumNo;
+        }
+        public void ToPrintMax(T maximumNo)
+        {
+            Console.WriteLine("maximum: "+maximumNo);
         }
     }
     public class FindMaximum
@@ -46,11 +59,11 @@ namespace find_Maximum_Problem_Using_Generics
             FindMaximumProblem<float> findFloatNumber = new FindMaximumProblem<float>(1.1F, 10.5F, 6.6F);
             FindMaximumProblem<string> findStringNumber = new FindMaximumProblem<string>("Sanjivani", "aryan", "kimaya");
             int integerMaximum = findIntegerNumber.Maximum();
-            Console.WriteLine("Maximum integer number : " + integerMaximum);
+            findIntegerNumber.ToPrintMax(integerMaximum);
             float floatMaximum = findFloatNumber.Maximum();
-            Console.WriteLine("Maximum float number : " + floatMaximum);
+            findFloatNumber.ToPrintMax(floatMaximum);
             string stringMaximum = findStringNumber.Maximum();
-            Console.WriteLine("Maximum string name : " + stringMaximum);
+            findStringNumber.ToPrintMax(stringMaximum);
         }
         /// <summary>
         /// Method to Compare Interface Implementation 
