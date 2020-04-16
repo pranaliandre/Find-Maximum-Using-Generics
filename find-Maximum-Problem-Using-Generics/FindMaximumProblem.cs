@@ -1,4 +1,6 @@
 ﻿using System;
+using Microsoft.VisualBasic;
+using System.Collections.Generic;
 namespace find_Maximum_Problem_Using_Generics
 {
     public class FindMaximumProblem<T> where T : IComparable
@@ -10,12 +12,16 @@ namespace find_Maximum_Problem_Using_Generics
         readonly T number2;
         readonly T number3;
         /// <summary>
+        /// Default constructor
+        /// </summary>
+        public FindMaximumProblem() { }
+
         /// parameterized constructor
         /// </summary>
         /// <param name="number1">first input</param>
         /// <param name="number2">first input</param>
         /// <param name="number3">first input</param>
-        public FindMaximumProblem(T number1,T number2,T number3)
+        public FindMaximumProblem(T number1, T number2, T number3)
         {
             this.number1 = number1;
             this.number2 = number2;
@@ -43,7 +49,33 @@ namespace find_Maximum_Problem_Using_Generics
         }
         public void ToPrintMax(T maximumNo)
         {
-            Console.WriteLine("maximum: "+maximumNo);
+            Console.WriteLine("maximum: " + maximumNo);
+        }
+        public T DyanamicfindMaximumValue(params T[] values)
+        {
+            //variable
+            int no_of_variables = values.Length;
+            // call sorting method
+            var sorted_values = SortedValues(values);
+            return sorted_values[^1];
+        }
+
+        public T[] SortedValues(T[] values)
+        {
+            //variable
+            T temp;
+            // bobble sort
+            for (int i = 0; i < values.Length - 1; i++)
+                for (int j = i + 1; j < values.Length; j++)
+                {   
+                    if (values[i].CompareTo(values[j]) > 0)
+                    {
+                        temp = values[i];
+                        values[i] = values[j];
+                        values[j] = temp;
+                    }
+                }
+            return values;
         }
     }
     public class FindMaximum
@@ -65,14 +97,5 @@ namespace find_Maximum_Problem_Using_Generics
             string stringMaximum = findStringNumber.Maximum();
             findStringNumber.ToPrintMax(stringMaximum);
         }
-        /// <summary>
-        /// Method to Compare Interface Implementation 
-        /// </summary>
-        /// <param name="obj"></param>
-        /// <returns></returns>
-        //public int CompareTo(object )
-       // {
-       //     throw new NotImplementedException();
-       // }
     }
 }

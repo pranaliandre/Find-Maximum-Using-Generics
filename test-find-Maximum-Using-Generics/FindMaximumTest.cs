@@ -54,5 +54,40 @@ namespace test_find_Maximum_Using_Generics
             findMaximum.ToPrintMax(maximum);
             Assert.AreEqual(expected, maximum);
         }
+
+
+        /// <summary>
+        /// Test Case For Testing dynamic Integer FindMaximum.
+        /// </summary>
+        [Test]
+        public void GivenIntegerNumbers_FindMaximumValue()
+        {
+            int expected = 70;
+            FindMaximumProblem<int> findMaximum = new FindMaximumProblem<int>();
+            int max = findMaximum.DyanamicfindMaximumValue(70, 32, 43, 4, 67, 20, 13);
+            Assert.AreEqual(expected, max);
+        }
+        /// <summary>
+        /// Test Case For Testing dynamic Float FindMaximum.
+        /// </summary>
+        [Test]
+        public void GivenFloatNumber_FindMaximumValue()
+        {
+            float expected = 7.0F;
+            FindMaximumProblem<float> findMaximum = new FindMaximumProblem<float>();
+            float max = findMaximum.DyanamicfindMaximumValue(7.0F, 3.2F, 4.3F, 4.7F, 6.7F, 2.0F, 1.3F);
+            Assert.AreEqual(expected, max);
+        }
+        /// <summary>
+        /// Test Case For Testing dynamic string FindMaximum.
+        /// </summary>
+        [Test]
+        public void GivenStringName_FindMaximumValue()
+        {
+            string expected = "sanjivani";
+            FindMaximumProblem<string> findMaximum = new FindMaximumProblem<string>();
+            string max = findMaximum.DyanamicfindMaximumValue("kimaya","aryan","devram","sanjivani");
+            Assert.AreEqual(expected, max);
+        }
     }
 }
